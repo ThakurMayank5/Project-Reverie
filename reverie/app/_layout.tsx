@@ -1,3 +1,6 @@
+// Must be the very first import — polyfills crypto.getRandomValues for @noble/*
+import 'react-native-get-random-values';
+
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -49,6 +52,12 @@ export default function RootLayout() {
           name="secret"
           options={{
             animation: 'fade_from_bottom',
+          }}
+        />
+        <Stack.Screen
+          name="settings"
+          options={{
+            animation: 'slide_from_right',
             presentation: 'modal',
           }}
         />
